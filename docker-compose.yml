@@ -4,6 +4,7 @@ volumes:
   portainer_data:
 
 services:
+
   jupyter:
     image: ariazza/bdp2_review_exercise
     volumes:
@@ -26,5 +27,4 @@ services:
 networks:
   frontend:
  
-
 
