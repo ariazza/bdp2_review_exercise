@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+  portainer_data:
+
+services:
+  jupyter:
+    image: ariazza/bdp2_review_exercise
+    volumes:
+         - "~/bdp2_review_exercise/work:/home/jovyan/work"
+    ports:
+         - 8888:8888
+    networks:
+         - frontend
+
+  portainer:
+    image: portainer/portainer
+    volumes:
+         - "/var/run/docker.sock:/var/run/docker.sock"
+         - portainer_data:/data 
+    ports: 
+         - 9000:9000
+    networks:
+         - frontend
+
+networks:
+  frontend:
+ 
+
+
